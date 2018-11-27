@@ -1,0 +1,51 @@
+
+The set is now empty
+
+What numbers do you want to add to the set ? 
+
+You have entered : 13 
+
+You have entered : 13 
+13 is already in the set
+
+You have entered : 13 
+13 is already in the set
+
+You have entered : 45 
+
+You have entered : -9 
+
+You have entered : -9 
+-9 is already in the set
+
+You have entered : -9 
+-9 is already in the set
+
+You have entered : 18 
+
+You have entered : 18 
+18 is already in the set
+
+You have entered : 18 
+18 is already in the set
+
+You have entered : 3 
+
+You have entered : 4 
+
+You have entered : 55 
+
+You have entered : 45 
+45 is already in the set
+
+You have entered : 66 
+
+You have entered : 13 
+13 is already in the set
+
+You have entered : 66 
+66 is already in the set
+
+The set is : 
+13 45 -9 18 3 4 55 66 
+The set is 8 values long

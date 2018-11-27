@@ -1,0 +1,31 @@
+
+The set is now empty
+
+What numbers do you want to add to the set ? 
+
+You have entered : 1 
+
+You have entered : 0 
+
+You have entered : 2 
+
+You have entered : 34 
+
+You have entered : 4 
+
+You have entered : 3 
+
+You have entered : 2 
+2 is already in the set
+
+You have entered : 0 
+0 is already in the set
+
+You have entered : 2 
+2 is already in the set
+
+You have entered : 5 
+
+The set is : 
+1 0 2 34 4 3 5 
+The set is 7 values long
