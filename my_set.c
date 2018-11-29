@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "my_set.h"
 #define SET_MAX_SIZE 64
 
 /* 
@@ -7,11 +8,6 @@ I decided to choose an array as data structure because it seemed to me the simpl
 	- the values have to appear in the set in the order they were typed in
 So it seemed to me it was the easiest way to do.
 */
-
-void get_set(int array[], int* arraySize);
-void print_set(int set[], int* arraySize);
-int checkSet(int array[], int num, int* arraySize);
-void addToSet(int array[], int num, int* arraySize);
 
 int main() {
 
@@ -22,7 +18,7 @@ int main() {
     print_set(set, setSize);
     get_set(set, setSize);
     print_set(set, setSize);
-    printf("The set is %d values long", *setSize);
+    printf("\nThe set is %d values long\n", *setSize);
 
 	return 0;
 }
@@ -38,11 +34,15 @@ void get_set(int array[], int* arraySize) {
 
     printf("What numbers do you want to add to the set ? \n");
 
-    while (scanf("%d", &temp) != EOF) {
-        printf("\nYou have entered : %d \n", temp);
-        if (checkSet(array, temp, arraySize) == 0 )
-            addToSet(array, temp, arraySize);
-    }
+	
+	while (scanf("%d", &temp) != EOF) {
+	
+		printf("\nYou have entered : %d \n", temp);
+		
+		if (checkSet(array, temp, arraySize) == 0 ) {
+			addToSet(array, temp, arraySize);
+			}
+		}
 }
 
 
@@ -55,7 +55,8 @@ void print_set(int array[], int* arraySize) {
 	int i = 0;
 
     if (*arraySize == 0) {
-        printf("\nThe set is now empty\n");
+        printf("The set is now empty\n");
+        
     } else {    
         printf("\nThe set is : \n");
 
@@ -77,8 +78,10 @@ int checkSet(int array[], int num, int* arraySize){ /*checks if num is in the ar
 
     int i=0;
 
-    for (i; i<*arraySize; i++) { /* problem when 0 is typed in : printed but not added to set */
+    for (i; i<*arraySize; i++) {
+    
         if (num == array[i]) {
+        
         	printf("%d is already in the set\n", num);
             return 1; /*if num is in the array*/
         }        
@@ -89,11 +92,17 @@ int checkSet(int array[], int num, int* arraySize){ /*checks if num is in the ar
 }
 
 /* 
-This function adds a number to the set given in parameter
+This function adds a number to the set if it's not full
 returns nothing 
 */
 void addToSet(int array[], int num, int* arraySize) {
 	
-	array[*arraySize] = num;
-	*arraySize += 1;		
-}
+	if ((*arraySize) >= SET_MAX_SIZE) {
+		printf("Sorry, the set is full\n");
+		
+		} else {
+			array[*arraySize] = num;
+			*arraySize += 1;
+		}		
+		
+} /* end of main */

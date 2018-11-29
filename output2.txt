@@ -1,4 +1,3 @@
-
 The set is now empty
 
 What numbers do you want to add to the set ? 
@@ -28,4 +27,5 @@ You have entered : 5
 
 The set is : 
 1 0 2 34 4 3 5 
+
 The set is 7 values long
