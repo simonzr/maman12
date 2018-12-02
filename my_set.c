@@ -3,6 +3,10 @@
 #define SET_MAX_SIZE 64
 
 /* 
+This program creates a set (data base of unique int values, arranged according their order of appearance) typed in by the user. The set size is maximum 64 values.
+Every value typed in by the user (until EOF) is compared to the existing set : if it's not in the set, it's added to it. 
+When EOF (ctrl+D) is typed in, the loop ends and prints all the values that are present in the buffer, and then prints the final set.
+
 I decided to choose an array as data structure because it seemed to me the simplest way considering the fact that :
 	- we know the max size of the set
 	- the values have to appear in the set in the order they were typed in
@@ -11,9 +15,9 @@ So it seemed to me it was the easiest way to do.
 
 int main() {
 
-	int set[SET_MAX_SIZE];
-	int setActualSize = 0;
-	int *setSize = &setActualSize;
+	int set[SET_MAX_SIZE];			/*array that contains the set*/
+	int setActualSize = 0;			/*size of the set*/
+	int *setSize = &setActualSize;	/*pointer to the variable that contains the size of the set*/
 
     print_set(set, setSize);
     get_set(set, setSize);
@@ -25,8 +29,7 @@ int main() {
 
 
 /* 
-This function gets the input from stdin, prints every number typed in, and adds it to the set if necessary 
-returns nothing
+Gets the input in loop from stdin (until EOF is syped in), prints every number typed in, and adds it to the set if necessary 
 */
 void get_set(int array[], int* arraySize) {
 
@@ -47,8 +50,8 @@ void get_set(int array[], int* arraySize) {
 
 
 /*
-This function prints the set (or tells that it's empty)
-returns nothing 
+Prints the set by printing all the values of the array (the for ends when the index is equal to the size set given in parameter)
+If the size is 0, tells that the set is empty
 */
 void print_set(int array[], int* arraySize) {
 
@@ -70,7 +73,7 @@ void print_set(int array[], int* arraySize) {
 
 
 /* 
-This function checks if a number is already in the set or not.
+Checks if a number is already in the set or not by comparing it to every value in the set (the for ends when the index is equal to the size set given in parameter)
 returns 1 if the number is already in the set
 returns 0 if the number is not in the set
 */
@@ -92,8 +95,7 @@ int checkSet(int array[], int num, int* arraySize){ /*checks if num is in the ar
 }
 
 /* 
-This function adds a number to the set if it's not full
-returns nothing 
+Adds a number to the set if it's not full, and updates the value that contains the set size
 */
 void addToSet(int array[], int num, int* arraySize) {
 	
